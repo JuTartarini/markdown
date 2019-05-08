@@ -1,7 +1,5 @@
 const { assert } = require('chai');
 const extractLinksFromMd = require('../index');
-const chai = require('chai');
-const expect = chai.expect;
 describe('index test', () => {
   describe('valid link from string - only link', () => {
     it("should have 1 link", () => {

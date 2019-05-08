@@ -10,10 +10,10 @@ function extract(value) {
       this.text = text;
     }
   }  
-  const regex = /(\[(.*?)\])|(https?|ftp):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?/gi;
-  if (value.match(regex) < 1) return links;
-  value.match(regex).reverse().map((x, idx) => (idx % 2 === 0) ? links.push(new Link(value.match(regex)[idx + 1], x)) : null);   
-  return (JSON.stringify(links, null, 1).replace(/":{/g, `${'}'}:\{`));
+  const regex =  /(\[(.*?)\])|(https?|ftp):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?/gi;
+  if (value.match(regex).length < 1) return links;
+  value.match(regex).reverse().map((x, idx) => (idx % 2 === 0) ? links.push(new Link(value.match(regex).reverse()[idx + 1], x)) : null);   
+  return (JSON.stringify(links, null, 1));
 }
 
 module.exports = extractLinksFromMd;
