@@ -5,7 +5,7 @@ Está biblioteca extrai links de arquivo markdown (Node.js)
 ## Como instalar:
 
 ```zsh
-$  npm install markdown
+$  npm install labmarkdown
 ```
 
 ## Como utilizar:
@@ -16,7 +16,7 @@ $  npm install markdown
 Exemplo:
 
 ```node
-const mark = require("markdown");
+const mark = require("labmarkdown");
 
 console.log(mark("Loren ipson [example](https://www.example.com)"));
 
